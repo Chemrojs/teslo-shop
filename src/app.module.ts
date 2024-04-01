@@ -17,7 +17,8 @@ import { ProductsModule } from './products/products.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
-      synchronize: true
+      synchronize: true,
+      ssl: process.env.USE_SSL === 'true' ? { rejectUnauthorized: false }: undefined,
     }),
 
     ProductsModule,
