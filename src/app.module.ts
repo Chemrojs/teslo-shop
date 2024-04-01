@@ -18,6 +18,7 @@ import { ProductsModule } from './products/products.module';
       password: process.env.DB_PASSWORD,
       autoLoadEntities: true,
       synchronize: true
+      ssl: true
     }),
 
     ProductsModule,
