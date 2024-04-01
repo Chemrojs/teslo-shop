@@ -5,8 +5,10 @@ import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-
+    ConfigModule.forRoot({
+			envFilePath: '.env',
+			isGlobal: true,
+		}),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST,
