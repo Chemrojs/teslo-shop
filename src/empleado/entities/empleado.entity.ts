@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Departamento } from "src/departamento/entities/departamento.entity";
+import { Puesto } from "src/puesto/entities/puesto.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Empleado {
@@ -15,10 +17,12 @@ export class Empleado {
     @Column('float')
     salario: number;
 
-    @Column('uuid')
-    id_departamento: string;
+    @OneToMany(() => Departamento, (departamento) => departamento.id )
+    id_departamento: Departamento[]
 
-    @Column('uuid')
-    id_puesto: string;
+    @OneToMany(() => Puesto, (puesto) => puesto.id )
+    id_puesto: Puesto[]
+    //@Column('uuid')
+    //id_puesto: string;
 
 }
