@@ -21,7 +21,7 @@ import { PuestoModule } from './puesto/puesto.module';
       port: +process.env.DB_PORT,
       autoLoadEntities: true,
       synchronize: true,
-      //ssl: process.env.USE_SSL === 'true',
+      ssl: process.env.USE_SSL === 'true',
     }),
 
     ProductsModule,
